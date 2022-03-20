@@ -5,7 +5,7 @@
         <img src="../assets/logo.png" alt="" />
       </div>
       <el-form
-        ref="form"
+        ref="loginFormRef"
         :rules="loginFormRules"
         :model="loginForm"
         label-width="80px"
@@ -28,7 +28,7 @@
         <!-- button -->
         <el-form-item class="btns" label-width="0">
           <el-button type="primary">Login</el-button>
-          <el-button type="info">Reset</el-button>
+          <el-button @click="resetLoginForm" type="info">Reset</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -65,6 +65,11 @@ export default {
         ],
       },
     };
+  },
+  methods: {
+    resetLoginForm() {
+      this.$refs.loginFormRef.resetFields();
+    },
   },
 };
 </script>
