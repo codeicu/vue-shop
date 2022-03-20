@@ -1,4 +1,7 @@
-import Vue from 'vue'
-import { Button } from 'element-ui'
+import Vue from "vue";
+import { Input, Button, Form, FormItem } from "element-ui";
 
-Vue.use(Button)
+Vue.use(Button);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);

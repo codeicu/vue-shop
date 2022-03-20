@@ -1,9 +1,24 @@
 <template>
   <div class="login_container">
     <div class="login_box">
-<div class="avatar_box">
-  <img src="../assets/logo.png" alt="">
-</div>
+      <div class="avatar_box">
+        <img src="../assets/logo.png" alt="" />
+      </div>
+      <el-form ref="form" :model="form" label-width="80px" class="login_form">
+        <!-- username -->
+        <el-form-item label-width="0">
+          <el-input></el-input>
+        </el-form-item>
+        <!-- passowrd -->
+        <el-form-item label-width="0">
+          <el-input></el-input>
+        </el-form-item>
+        <!-- button -->
+        <el-form-item class="btns" label-width="0">
+          <el-button type="primary">Login</el-button>
+          <el-button type="info">Reset</el-button>
+        </el-form-item>
+      </el-form>
     </div>
   </div>
 </template>
@@ -17,7 +32,7 @@ export default {};
   background-color: #2d4d6d;
   height: 100%;
 }
-.login_box{
+.login_box {
   width: 450px;
   height: 300px;
   background-color: #fff;
@@ -25,26 +40,39 @@ export default {};
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px greenyellow;
 }
 
-.avatar_box{
+.avatar_box {
   height: 130px;
   width: 130px;
   border: 1px solid #eee;
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 0 10px;
+  box-shadow: 0 0 10px green;
   position: absolute;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: #fff;
-  img{
+  img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: #eee;
   }
+}
+.btns {
+  display: flex;
+  justify-content: flex-end;
+}
+.login_form {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  padding: 0 20px;
+  // 规定两个并排的带边框的框
+  box-sizing: border-box;
 }
 </style>
 
