@@ -23,5 +23,5 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### ºó¶Ë´úÂë
+### åç«¯APIåœ°å€
 axios.defaults.baseURL = https://lianghj.top:8888/api/private/v1/

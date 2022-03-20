@@ -41,8 +41,8 @@ export default {
     return {
       // login bind data
       loginForm: {
-        username: "",
-        password: "",
+        username: "admin",
+        password: "123456",
       },
       loginFormRules: {
         username: [
@@ -79,7 +79,9 @@ export default {
 
         if (res.meta.status !== 200)
           return this.$message.error("Error Username/Password");
-        return this.$message.success("success login!");
+        this.$message.success("success login!");
+        window.sessionStorage.setItem("token", res.data.token);
+        this.$router.push("/home");
       });
     },
   },
