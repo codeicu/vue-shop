@@ -58,7 +58,7 @@ export default {
           { required: true, message: "please input password", trigger: "blur" },
           {
             min: 6,
-            max: 10,
+            max: 15,
             message: "length should between 6 to 10",
             trigger: "blur",
           },
@@ -71,8 +71,14 @@ export default {
       this.$refs.loginFormRef.resetFields();
     },
     login() {
-      this.$refs.loginFormRef.validate((valid) => {
-        console.log(valid);
+      this.$refs.loginFormRef.validate(async (valid) => {
+        if (!valid) {
+          return;
+        }
+        const { data: res } = await this.$http.post("login", this.loginForm);
+
+        if (res.meta.status !== 200) return console.log("failed login");
+        console.
       });
     },
   },
@@ -93,7 +99,7 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px greenyellow;
+  box-shadow: 0 0 10px;
 }
 
 .avatar_box {
@@ -102,7 +108,7 @@ export default {
   border: 1px solid #eee;
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 0 10px green;
+  box-shadow: 0 0 10px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
