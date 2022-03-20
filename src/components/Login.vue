@@ -4,15 +4,26 @@
       <div class="avatar_box">
         <img src="../assets/logo.png" alt="" />
       </div>
-      <el-form ref="form" :model="form" label-width="80px" class="login_form">
+      <el-form
+        ref="form"
+        :rules="loginFormRules"
+        :model="loginForm"
+        label-width="80px"
+        class="login_form"
+      >
         <!-- username -->
-        <el-form-item label-width="0">
-          <el-input prefix-icon="iconfont icon-wode"></el-input>
+        <el-form-item label-width="0" prop="username">
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="iconfont icon-wode"
+          ></el-input>
         </el-form-item>
         <!-- passowrd -->
-        <el-form-item label-width="0">
-        
-          <el-input prefix-icon="iconfont icon-huiyuan1"></el-input>
+        <el-form-item label-width="0" prop="password">
+          <el-input
+            v-model="loginForm.password"
+            prefix-icon="iconfont icon-huiyuan1"
+          ></el-input>
         </el-form-item>
         <!-- button -->
         <el-form-item class="btns" label-width="0">
@@ -25,7 +36,37 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      // login bind data
+      loginForm: {
+        username: "",
+        password: "",
+      },
+      loginFormRules: {
+        username: [
+          { required: true, message: "please input uname", trigger: "blur" },
+          {
+            min: 3,
+            max: 10,
+            message: "length should between 3 to 10",
+            trigger: "blur",
+          },
+        ],
+        password: [
+          { required: true, message: "please input password", trigger: "blur" },
+          {
+            min: 6,
+            max: 10,
+            message: "length should between 6 to 10",
+            trigger: "blur",
+          },
+        ],
+      },
+    };
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -76,4 +117,3 @@ export default {};
   box-sizing: border-box;
 }
 </style>
-
