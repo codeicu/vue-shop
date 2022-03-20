@@ -104,8 +104,8 @@ module.exports = {
     "no-underscore-dangle": 1, //标识符不能以_开头或结尾
     "no-unneeded-ternary": 2, //禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
     "no-unreachable": 2, //不能有无法执行的代码
-    "no-unused-expressions": 2, //禁止无用的表达式
-    "no-unused-vars": [2, { vars: "all", args: "after-used" }], //不能有声明后未被使用的变量或参数
+    "no-unused-expressions": 1, //禁止无用的表达式
+    "no-unused-vars": [1, { vars: "all", args: "after-used" }], //不能有声明后未被使用的变量或参数
     "no-use-before-define": 2, //未定义前不能使用
     "no-useless-call": 2, //禁止不必要的call和apply
     "no-void": 2, //禁用void操作符
@@ -131,7 +131,7 @@ module.exports = {
     "consistent-return": 0, //return 后面是否允许省略
     "consistent-this": [2, "that"], //this别名
     "constructor-super": 0, //非派生类不能调用super，派生类必须调用super
-    curly: [2, "all"], //必须使用 if(){} 中的{}
+    curly: [1, "all"], //必须使用 if(){} 中的{}
     "default-case": 2, //switch语句最后必须有default
     "dot-location": 0, //对象访问符的位置，换行的时候在行首还是行尾
     "dot-notation": [0, { allowKeywords: true }], //避免不必要的方括号
