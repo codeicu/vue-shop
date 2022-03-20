@@ -78,7 +78,6 @@ export default {
         const { data: res } = await this.$http.post("login", this.loginForm);
 
         if (res.meta.status !== 200) return console.log("failed login");
-        console.
       });
     },
   },
