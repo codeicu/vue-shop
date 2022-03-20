@@ -7,11 +7,12 @@
       <el-form ref="form" :model="form" label-width="80px" class="login_form">
         <!-- username -->
         <el-form-item label-width="0">
-          <el-input></el-input>
+          <el-input prefix-icon="iconfont icon-wode"></el-input>
         </el-form-item>
         <!-- passowrd -->
         <el-form-item label-width="0">
-          <el-input></el-input>
+        
+          <el-input prefix-icon="iconfont icon-huiyuan1"></el-input>
         </el-form-item>
         <!-- button -->
         <el-form-item class="btns" label-width="0">
