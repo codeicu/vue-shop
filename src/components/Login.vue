@@ -41,51 +41,51 @@ export default {
     return {
       // login bind data
       loginForm: {
-        username: "admin",
-        password: "123456",
+        username: 'admin',
+        password: '123456',
       },
       loginFormRules: {
         username: [
-          { required: true, message: "please input uname", trigger: "blur" },
+          { required: true, message: 'please input uname', trigger: 'blur' },
           {
             min: 3,
             max: 10,
-            message: "length should between 3 to 10",
-            trigger: "blur",
+            message: 'length should between 3 to 10',
+            trigger: 'blur',
           },
         ],
         password: [
-          { required: true, message: "please input password", trigger: "blur" },
+          { required: true, message: 'please input password', trigger: 'blur' },
           {
             min: 6,
             max: 15,
-            message: "length should between 6 to 10",
-            trigger: "blur",
+            message: 'length should between 6 to 10',
+            trigger: 'blur',
           },
         ],
       },
-    };
+    }
   },
   methods: {
     resetLoginForm() {
-      this.$refs.loginFormRef.resetFields();
+      this.$refs.loginFormRef.resetFields()
     },
     login() {
       this.$refs.loginFormRef.validate(async (valid) => {
         if (!valid) {
-          return;
+          return
         }
-        const { data: res } = await this.$http.post("login", this.loginForm);
+        const { data: res } = await this.$http.post('login', this.loginForm)
 
         if (res.meta.status !== 200)
-          return this.$message.error("Error Username/Password");
-        this.$message.success("success login!");
-        window.sessionStorage.setItem("token", res.data.token);
-        this.$router.push("/home");
-      });
+          return this.$message.error('Error Username/Password')
+        this.$message.success('success login!')
+        window.sessionStorage.setItem('token', res.data.token)
+        this.$router.push('/home')
+      })
     },
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
