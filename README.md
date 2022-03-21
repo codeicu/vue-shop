@@ -34,4 +34,15 @@ window.sessionStorage.clear()
 //跳转到登录页
 this.$router.push('/login')
 ```
-2. 
+2. 通过.prettierrc配置文件修改默认格式化配置
+```
+{
+  "semi": false,
+  "singleQuote": true
+}
+```
+3. .eslintrc.js 修改语法校验规则
+```
+0 代表禁用, 1 代表提醒, 2 代表报错
+"space-before-function-paren": [0, "always"], //函数定义时括号前面要不要有空格
+```

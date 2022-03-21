@@ -5,12 +5,13 @@
 </template>
 <script>
 export default {
+  name: 'app',
   methods: {
     logout() {
-      window.sessionStorage.clear();
-      this.$router.push("/login");
+      window.sessionStorage.clear()
+      this.$router.push('/login')
     },
   },
-};
+}
 </script>
 <style lang=""></style>
