@@ -46,3 +46,10 @@ this.$router.push('/login')
 0 代表禁用, 1 代表提醒, 2 代表报错
 "space-before-function-paren": [0, "always"], //函数定义时括号前面要不要有空格
 ```
+4. css学习总结
+```
+justify-content: space-between;
+padding-left: 0;
+<!-- 水平居中 -->
+align-items: center;
+```
